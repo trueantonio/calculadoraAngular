@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componente calculadora</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container text-center py-5 bg-primary text-white">
+        <h3 class="display-1">{{titulo}}</h3>
+        Primer número <input [(ngModel)] = "num1">
+        <span *ngIf="num1">
+            Segundo número <input [(ngModel)] = "num2">
+        </span>
+        Resultado: <span [style.color]='"white"'>{{resultado}}</span>
+        </div> <br>
+        <div class="container text-center">
+        <div class="btn-group">
+        <button class="btn btn-primary" (click)="sumar()">Sumar</button>
+        <button class="btn btn-primary" (click)="restar()">Restar</button>
+        <button class="btn btn-primary" (click)="multiplicar()">Multiplicar</button>
+        <button class="btn btn-primary" (click)="dividir()">Dividir</button>
+        <button class="btn btn-primary" (click)="binario()">Pasar a binario</button>
+        <button class="btn btn-primary" (click)="limpiarTodo()">Limpiar todo</button>
+        </div> 
+        </div>
+        <hr>
+        <div class="container text-center">
+        <h4 class="display-3">Historial de operaciones</h4>
+        <ul>
+            <li *ngFor="let elemento of historial">{{elemento}}</li>
+        </ul>
+        </div>
+</body>
+</html>
+
